@@ -37,17 +37,20 @@ app.post('/sendInfo', (req, res) => {
 
 var mysql = require('mysql');
 
-var con = mysql.createConnection({
+var db_config = {
   host: "localhost",
   user: "root",
   password: "",
   database: "sorozatmanager"
-});
+};
 
 
 
+var con;
 
 function handleDisconnect() {
+    con = mysql.createConnection(db_config)
+    
     con.connect(function(err) {
         if(err) {
             console.log('error when connecting to db:', err);
