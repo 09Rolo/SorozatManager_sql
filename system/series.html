@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/x-icon" href="./imgs/icon_1.png" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_pc.css">
+    <title>Sorozatok | By: Rolo</title>
+
+    <style>
+        #fuggony {
+            height: 100%;
+            z-index: 10;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        #fuggony {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.99);
+            animation-fill-mode: forwards;
+            animation-name: anim_02;
+            animation-duration: 0.5s;
+            animation-delay: 0.1s;
+        }
+
+        @keyframes anim_02 {
+            from {width: 100%;}
+            to {width: 0px;}
+        }
+    </style>
+</head>
+<body onload="loaded()">
+    <div id="fuggony"></div>
+
+    <div class="container">
+
+        <header class="alahuzas">Üdvözlet!</header>
+
+        <div class="headercucc">
+            <a>Sorozat</a>
+            <h2>|</h2>
+            <a id="vissza" href="index.html">Főoldal <span>-></span></a>
+        </div>
+
+        <div id="sorozatok">
+            <div class="sorozat" style="margin-bottom: 50px;">
+                <div class="imgs">
+                    <img class="shadowimg" id="simg" src="">
+                    <img class="img" id="img" src="">
+                </div>
+
+
+                <p id="sori_name">N/A</p>
+            </div>
+
+
+
+
+
+            <div id="infok_kezeles">
+
+                <div id="info-bg">
+                    <div class="info">
+                        <p id="seasons">Évadok: <span id="seasons_number">N/A</span></p><br>
+                        <p id="total_eps">Epizódok összesen: <span id="total_episodes_number">N/A</span></p>
+
+                        <hr><br>
+
+                    
+                        <div id="list">
+                            <b>Évadok</b>
+                            <b>Epizódok</b>
+
+                            <br>
+                        </div>
+
+                        <div id="list_nums">
+                            <div id="season_list">
+
+                            </div>
+
+
+                            <div id="episode_list">
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div id="kezeles">
+
+                    <div id="iswatched_container" class="bordered_section">
+                        <label for=""><span id="selected_evad_szama">N/A</span>. Évad, <span id="selected_episode_szam">N/A</span>. Epizód</label><hr><br>
+                        <p>Láttad már ezt a részt?</p>
+                        <br>
+
+                        <div id="latta_e">
+                            <button id="latta_igen" onclick="Watched('igen')">Igen!</button>
+                            <button id="latta_nem" onclick="Watched('nem')">Nem</button>
+                        </div>
+
+                        <div class="passcontainer">
+                            <label for="pass" id="passlabel2">Írd be a jelszót a véglegesítéshez</label><br><br>
+                        
+                            <div id="passinput2">
+                                <input type="password" name="pass2" id="pass2" class="beiroinput"><input type="checkbox" id="showpass2" onclick="showPass()"><p>Mutasd</p><br>
+                            </div>
+                        
+                            <span class="labjegyzet">*Ha nem történik semmi akkor helytelen a jelszó!</span>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <div id="actions">
+                        <button id="editButton" onclick="edit('buttonbol')">Sorozat módosítása...</button>
+                        <p id="help" class="labjegyzet">*A változtatások véglegesítéshez majd írd be a jelszót lentebb!!!!!!</p>
+                        <hr>
+                        <div id="passcontainer">
+                            <label for="pass" id="passlabel">Írd be a jelszót a véglegesítéshez</label><br><br>
+                        
+                            <div id="passinput">
+                                <input type="password" name="pass" id="pass" class="beiroinput"><input type="checkbox" id="showpass" onclick="showPass()"><p>Mutasd</p><br>
+                            </div>
+                        
+                            <span class="labjegyzet">*Ha nem történik semmi akkor helytelen a jelszó!</span>
+                        </div>
+                        <hr>
+
+
+
+
+                        <button id="borito_valtoztatas" onclick="borito_valtoztatasFunc()"><strong>Borítókép</strong> megváltoztatása</button>
+                        <div id="borito_valtoztatasresz">
+
+                            <div id="borito_valtoztatas_plus" class="bordered_section">
+                                <label for="borito_valtoztatas_szoveg_plus">Kép link(Pl: http://valami.png)</label><br>
+                                <input type="text" name="borito_valtoztatas_szoveg_plus" class="beiroinput" id="borito_valtoztatas_szoveg_plus"><br>
+                            </div>
+
+
+                            <button id="borito_valtoztatas_confirm" onclick="borito_valtoztatasFunc('confirmed')">Megváltoztatás</button>
+                        </div>
+
+
+
+
+                        <button id="deleteSeries" onclick="deleteSeriesFunc()">Sorozat <strong>törlése</strong></button>
+                        <div id="deleteresz" class="bordered_section">
+                            <p>Biztos vagy benne?</p><br>
+                            <button id="deleteconfirmbutton" onclick="deleteSeriesFunc('confirmed')">Igen!</button>
+                            <br>
+                            <button id="deletecancelbutton" onclick="location.reload()">Nem</button>
+                        </div>
+
+
+
+
+                        <button id="addSeasonToSeries" onclick="addSeasonToSeriesFunc()"><strong>Évad</strong> hozzáadása</button>
+                        <div id="evadhozzaadasresz">
+
+                            <div id="season_hozzaadasnal_plus" class="bordered_section">
+                                <h3>Évad hozzáadása</h3>
+
+                                <label for="epizodok_szama_plus">Epizódok száma</label><br>
+                                <input type="number" name="epizodok_szama_plus" class="beiroinput" id="epizodok_szama_plus"><br>
+
+                                <label for="van_pilotja_plus">Van 0. része?</label>
+                                <input type="checkbox" name="van_pilotja_plus" id="van_pilotja_plus"> <br>
+                            </div>
+
+
+                            <button id="addSeasonToSeries_confirm" onclick="addSeasonToSeriesFunc('confirmed')">Hozzáadás</button>
+                        </div>
+
+
+
+
+                        <button id="addEpisodeToSeason" onclick="addEpisodeToSeasonFunc()"><strong>Epizód</strong> hozzáadása</button>
+                        <div id="epizodhozzaadasresz">
+
+                            <div id="episode_hozzaadasnal_plus" class="bordered_section">
+                                <label for="evad_szama_plus">Évad száma(amibe hozzáadod)</label><br>
+                                <input type="number" name="evad_szama_plus" class="beiroinput" id="evad_szama_plus"><br>
+
+                                <label for="ispilot_plus">0. rész?</label>
+                                <input type="checkbox" name="ispilot_plus" id="ispilot_plus"> <br>
+                            </div>
+
+
+                            <button id="addEpisodeToSeason_confirm" onclick="addEpisodeToSeasonFunc('confirmed')">Hozzáadás</button>
+                        </div>
+
+
+
+
+                    </div>
+                    
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div id="loading">
+            
+
+            <h6 id="spinning_loading">|</h6>
+            <br>
+            <p>Kérlek várj...</p>
+        </div>
+
+
+    </div>
+
+
+    <script src="script_series.js"></script>
+
+</body>
+</html>

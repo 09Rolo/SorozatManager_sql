@@ -1,0 +1,800 @@
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+    
+    overflow-x: hidden;
+}
+
+:root {
+    font-family: "Kode Mono", monospace;
+    color: white;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+
+body {
+    background-color: #161616;
+    height: 100%;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+
+::-webkit-scrollbar-track {
+    background: rgb(50, 50, 50);
+}
+  
+
+::-webkit-scrollbar-thumb {
+    background: #424242;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #8C031C;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 720px) {
+
+header {
+    font-size: 45px;
+    font-weight: 700;
+
+    margin-left: 20px;
+    margin-top: 70px;
+    margin-bottom: 80px;
+
+}
+
+
+
+h1 {
+    font-size: 30px;
+    position: relative;
+    left: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+#sorozatok {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 100%;
+    padding-top: 90px;
+}
+
+
+.sorozat {
+    position: relative;
+    overflow: visible;
+    width: 80%;
+    margin-bottom: 150px;
+
+}
+.sorozat:last-child {
+    margin-bottom: 50px;
+}
+
+
+
+.imgs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.img {
+    max-width: 100%;
+    display: block;
+    position: relative;
+    z-index: 0;
+
+    border: 3px solid black;
+}
+
+.shadowimg {
+
+    filter: blur(15px);/* this is the magic part */
+    
+    height: 110%;
+    width: 110%;
+    border-radius: 40px;
+    position: absolute;
+    z-index: -1;
+}
+
+
+
+
+.sorozat p {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    
+    background-color: rgba(0, 0, 0, 0.5);
+
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+
+
+
+
+.alahuzas {
+    display: inline-block;
+    position: relative;
+}
+.alahuzas::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 0;
+    height: 3px;
+    background-color: #8C031C;
+
+    animation-name: alahuz;
+    animation-duration: 1.0s;
+    animation-fill-mode: forwards;
+}
+@keyframes alahuz {
+    from {width: 0;}
+    to {width: 100%;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="password"]:focus {
+    outline: 2px solid #8C031C;
+}
+
+input {
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+#logincontainer {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 80%;
+}
+
+
+#belepesgomb {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 30px;
+    background-color: #8C031C;
+    font-weight: bold;
+    border: 2px solid black;
+}
+
+
+
+#bejelentkezo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+#logincontainer label {
+    font-size: 30px;
+}
+
+
+.beiroinput {
+    font-size: 20px;
+    width: 50px;
+    text-align: center;
+    background-color: white;
+    color: #161616;
+    font-weight: bold;
+    border: none;
+}
+
+.beiroinput:focus{
+    border: none;
+    border-radius: 30px;
+    width: 150px;
+    transition: 0.3s;
+}
+
+
+#belepesgomb_2 {
+    font-size: 20px;
+    padding: 5px;
+    background-color: #8C031C;
+    color: #161616;
+    border: 2px solid black;
+    border-radius: 30px;
+}
+
+
+
+.headercucc, .headercucc a{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+.headercucc a:last-child {
+    font-size: 20px;
+}
+
+.headercucc a:first-child {
+    color: #8C031C;
+}
+
+.headercucc a span {
+    text-decoration: underline;
+}
+
+
+.headercucc a:hover{
+    color: #8C031C;
+}
+
+
+
+
+
+
+
+
+#sorozatadd_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    animation-play-state: paused;
+}
+
+
+
+.season_hozzaadasnal {
+    padding: 10px;
+    margin-bottom: 25px;
+    border: 2px solid rgb(50, 50, 50);
+    border-radius: 20px;
+}
+
+
+.bordered_section {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+
+#hozzaadas_kezdete, #hozzaadas {
+    padding: 5px;
+    color: #161616;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    transition: 0.3s;
+}
+
+#hozzaadas {
+    color: #8C031C;
+    background-color: #161616;
+}
+
+
+.labjegyzet {
+    font-size: 10px; 
+    color: gray; 
+    font-weight: bold;
+}
+
+
+#passcontainer, .passcontainer {
+    border-radius: 20px;
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: rgba(140, 3, 28, 0.5);
+}
+
+
+#passinput, #passinput2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#pass, #pass2 {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+
+#showpass, #showpass2 {
+    width: 23px;
+    height: 23px;
+}
+
+
+
+
+
+
+
+#infok_kezeles {
+    transition: 0.5s;
+}
+
+
+
+
+
+
+#iswatched_container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    margin-bottom: 90px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+#iswatched_container span {
+    font-weight: bold;
+    font-size: larger;
+    color: red;
+}
+
+
+#iswatched_container hr {
+    width: 100%;
+    background-color: white;
+    border-color: white;
+}
+
+
+
+#latta_e {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+#latta_e button {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    border: none;
+}
+
+#latta_e button:first-child{
+    background-color: green;
+}
+
+#latta_e button:last-child{
+    background-color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#help {
+    font-weight: bold;
+    color: red;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+#actions {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+
+    border-bottom: 2px solid #8C031C;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    border-top: 2px solid #8C031C;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+#actions, #deleteresz, #evadhozzaadasresz, #epizodhozzaadasresz, #borito_valtoztatasresz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+#editButton, #deleteSeries, #addSeasonToSeries, #addEpisodeToSeason, #borito_valtoztatas {
+    background-color: gray;
+    border: none;
+    width: 200px;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 50px;
+    margin-bottom: 5px;
+}
+
+#editButton {
+    margin-top: 10px;
+}
+
+
+#deleteconfirmbutton, #deletecancelbutton, #addSeasonToSeries_confirm, #addEpisodeToSeason_confirm, #borito_valtoztatas_confirm {
+    padding: 2px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: lime;
+    font-weight: bold;
+}
+#deletecancelbutton {
+    background-color: red;
+}
+
+
+
+
+hr {
+    width: 100%;
+    background-color: #8C031C;
+    border-color: #8C031C;
+}
+
+#help {
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+.latta_a_reszt {
+    background-color: #038C3E !important;
+    color: #025939 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+#loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100dvh;
+    position: fixed;
+    top: 0px;
+
+    z-index: 10;
+
+    background-color: rgba(100, 100, 100, 0.8);
+
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+
+
+
+
+#spinning_loading {
+    font-size: 100px;
+
+    animation-fill-mode: forwards;
+    animation-name: spinning;
+    animation-duration: 0.7s;
+    animation-delay: 0.1s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes spinning {
+    from {rotate: 0deg;}
+    to {rotate: 360deg;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#info-bg {
+    background-color: rgb(70, 70, 70);
+    border-radius: 30px;
+    margin-bottom: 50px;
+
+    max-width: 80%;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.info {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    padding: 20px;
+
+    font-size: 25px;    
+}
+
+
+
+
+
+#list, #list_nums {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+#season_list, #episode_list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    font-size: 50px;
+}
+
+
+
+.season_in_list, .episode_in_list {
+    color: gray;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+.active_season, .active_episode {
+    font-weight: 700;
+    color: #8C031C;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#info_box_beforelogin {
+    margin-top: 200px;
+    padding-bottom: 5px;
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+
+#info_box_texts {
+    margin-bottom: 0px;
+    background-color: black;
+}
+
+
+
+.point {
+    margin-bottom: 30px;
+    border-radius: 30px;
+    background-color: rgb(0, 0, 0);
+
+    padding: 20px;
+    color: white;
+
+    border: 0.5px ridge rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+.point li {
+    margin-top: 50px;
+}
+
+
+.point ul {
+    list-style: square;
+    list-style-position: inside;
+}
+
+
+::marker {
+    color: red;
+}
+
+
+.big {
+    font-size: larger;
+}
+
+
+.kezdoelem {
+    text-decoration: underline;
+}
+
+
+.point ul li {
+    line-height: 1.5;
+}
+
+
+
+.point a {
+    color: #8C031C;
+    text-decoration: underline;
+}
+
+
+
+
+.infotitle {
+    text-align: center;
+    font-size: 25px;
+}
+
+
+.point img {
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+
+
+}
+
+
+
+
+

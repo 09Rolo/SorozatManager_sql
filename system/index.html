@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="shortcut icon" type="image/x-icon" href="./imgs/icon_1.png" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_pc.css">
+    <title>Sorozatok | By: Rolo</title>
+
+
+    <style>
+        #fuggony {
+            height: 100%;
+            z-index: 10;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+
+        #fuggony {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.99);
+            animation-fill-mode: forwards;
+            animation-name: anim_01;
+            animation-duration: 0.5s;
+            animation-delay: 0.1s;
+        }
+
+        @keyframes anim_01 {
+            from {width: 100%;}
+            to {width: 0px;}
+        }
+
+
+
+
+
+        #sorozatadd_container {
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+
+
+            width: 100px;
+            height: 100px;
+
+            border-radius: 100%;
+
+
+            overflow: hidden;
+
+
+            border: 1px solid #8C031C;
+
+            animation-fill-mode: forwards;
+            animation-name: anim_add_reveal;
+            animation-duration: 0.5s;
+        }
+
+
+
+
+        #plus_divje {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            height: 50px;
+            border-radius: 100%;
+            border: 1px solid #8C031C;
+        }
+
+        #plus_sign_addresz {
+            z-index: 2;
+            top: -4px;
+            position: absolute;
+            font-size: 80px;
+            color: white;
+
+            background-color: #0F0F0F;
+            width: 52%;
+        }
+
+
+        @keyframes anim_add_reveal {
+            0% {
+                width: 100px;
+                height: 100px;
+                border-radius: 100%;
+            }
+
+            90% {
+                height: 335px;
+            }
+
+            100% {
+                width: 80%;
+                height: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 30px;
+            }
+        }
+
+
+        @keyframes anim_add_not_reveal {
+            0% {
+                width: 80%;
+                height: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 30px;
+            }
+
+            10% {
+                height: 335px;
+            }
+
+            100% {
+                width: 100px;
+                height: 100px;
+                border-radius: 100%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="fuggony"></div>
+
+    <div class="container">
+        <header class="alahuzas">Üdvözlet!</header>
+
+        
+
+        
+            <div id="logincontainer">
+                <button id="belepesgomb" onclick="login()">Belépés</button>
+
+                <div id="bejelentkezo">
+                    <label for="username" class="alahuzas">Felhasználónév</label><br>
+                    <input type="text" spellcheck="false" name="username" class="beiroinput" id="username" placeholder="név"><br><br>
+
+                    <button onclick="login(getElementById('username').value)" id="belepesgomb_2">Belépés</button>
+
+                </div>
+            </div>
+
+
+
+
+            <div class="bordered_section" id="info_box_beforelogin">
+                <h2>Egy kis információ...</h2>
+
+                <hr><br>
+
+                <div class="point">
+                    <strong><span class="big">Ez a weboldal fejlesztés alatt van</span>, és közel sincs a végleges változatához</strong>
+                    <ul>
+                        <li>Készítő: <strong> <a href="#Rolo" rel="noopener noreferrer">Rolo</a></strong></li>
+                    </ul>
+                </div>
+
+
+                <div class="point">
+                    <p class="big infotitle"><strong>Néhány funkció magyarázata</strong></p>
+                    <ul>
+                        <li>
+                            <strong class="big kezdoelem">Az információk megszerzése</strong>: 
+                            <br>Sajnos az információk lekérését nem tudtam még autómatizálni. 
+                            <br><br><strong>De</strong> tökéletes forrás <a href="https://www.imdb.com/" target="_blank" rel="noopener noreferrer">az imdb oldala</a> ahonnan meg lehet nézni a szükséges adatokat.<br><br> 
+                            <strong>A kép linkeket</strong> pedig így lehet megkapni: 
+                                <ol> 
+                                    <li><img src="./imgs/keplink_1.png" alt="Képlink lekérése"></li>
+                                    <li><img src="./imgs/keplink_2.png" alt="Képlink lekérése"></li>
+                                </ol>
+                        </li>
+
+                        <li><strong class="big kezdoelem">0.rész</strong>: <br>
+                            Ha ilyet látsz, akkor az 0.rész, ahogyan a nevében is benne van.
+
+                            <img src="./imgs/0.resz.png" alt="0.resz">
+                        </li>
+
+                        <li><strong class="big kezdoelem">Sok várakozási idő</strong>: <br>
+                            Sajnos csak így tudtam megoldani, hogy normálisan átfusson az adat a szerveren, és ne legyenek problémák az oldallal.
+                        </li>
+
+                        <li><strong class="big kezdoelem">Jelszó rendszer</strong>: <br>
+                            Ha belépsz egy felhasználónévvel és azt még nem használta senki, akkor amint sorozatot adnál hozzá te adod meg a fióknak a jelszót, amivel az a későbbiekben működni fog. Tehát jegyezd meg ezt a megadott jelszót, mert a későbbiekben ezzel fogsz tudni nagyjából mindent csinálni.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+
+
+        <div id="sorozattext" class="headercucc">
+            <a>Sorozatok:</a>
+            <h2>|</h2>
+            <a id="vissza" href="index.html">Kijelentkezés <span>-></span></a>
+        </div>
+
+
+
+
+        <div id="sorozatok">
+
+
+        </div>
+
+
+
+
+        <div id="sorozatadd_container">
+            <div id="plus_divje">
+                <p id="plus_sign_addresz" onclick="reveal_ornot_addresz()">+</p>
+            </div>
+
+
+            <h2 class="alahuzas">Sorozat hozzáadása</h2>
+
+            <label for="name">Sorozat neve</label>
+            <input type="text" spellcheck="false" name="name" class="beiroinput" id="name"><br><br>
+
+            <label for="filek">Kép link(Pl: http://valami.png)</label>
+            <input type="text" spellcheck="false" name="filek" class="beiroinput" id="filek"><br><br>
+
+            <label for="seasons_number_input">Évadok száma</label>
+            <input type="number" min="1" max="300" name="seasons_number_input" class="beiroinput" id="seasons_number_input"><br><br>
+
+            <button onclick="Hozzaadas(getElementById('seasons_number_input').value, 'kezdes')" id="hozzaadas_kezdete">Hozzááadás kezdése...</button>
+
+
+
+
+            <div id="seasonok_hozzaadashoz">
+
+            </div>
+
+
+            <div id="passcontainer">
+                <label for="pass" id="passlabel">Írd be a jelszót<span class="labjegyzet">, ha a fiók még nem foglalt akkor itt hozhatsz létre egyet.</span></label><br><br>
+
+                <div id="passinput">
+                    <input type="password" name="pass" id="pass" class="beiroinput"><input type="checkbox" id="showpass" onclick="showPass()"><p>Mutasd</p><br>
+                </div>
+
+                <span class="labjegyzet">*Ha nem történik semmi akkor helytelen a jelszó!</span>
+            </div>
+
+
+            <button onclick="Hozzaadas(getElementById('seasons_number_input').value, 'notkezdes', getElementById('pass').value)" id="hozzaadas">Hozzááadás</button>
+
+        </div>
+
+
+
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
